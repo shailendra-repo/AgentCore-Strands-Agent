@@ -12,7 +12,9 @@ ollama_model = OllamaModel(
 
 app = BedrockAgentCoreApp()
 # Create an agent using the Ollama model
-agent = Agent(model=ollama_model)
+agent = None
+
+agent = Agent(model=ollama_model, callback_handler=None)
 
 @app.entrypoint
 async def strands_agent_bedrock(payload):
@@ -21,7 +23,6 @@ async def strands_agent_bedrock(payload):
     
     :param payload: Description
     """
-
     user_inut = payload.get("prompt")
     agent_stream = agent.stream_async(user_inut)
 

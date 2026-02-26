@@ -23,13 +23,6 @@ logger.setLevel("INFO")
 url = 'http://localhost:8080/invocations' # Example streaming API endpoint
 
 
-# Page config
-st.set_page_config(
-    page_title="Local AgentCore Chat",
-    page_icon="static/gen-ai-dark.svg",
-    layout="wide",
-    initial_sidebar_state="expanded",
-)
 
 # Remove Streamlit deployment components
 st.markdown(
@@ -326,6 +319,14 @@ if "username" not in st.session_state:
 # ----------------------------
 
 def login_screen():
+    # Page config
+    st.set_page_config(
+        page_title="Local AgentCore Chat",
+        page_icon="static/gen-ai-dark.svg",
+        layout="centered",
+        initial_sidebar_state="expanded",
+    )
+
 
     st.title("Login")
 
@@ -365,6 +366,14 @@ def login_screen():
 # ----------------------------
 
 def home_screen():
+# Page config
+    st.set_page_config(
+        page_title="Local AgentCore Chat",
+        page_icon="static/gen-ai-dark.svg",
+        layout="wide",
+        initial_sidebar_state="expanded",
+    )
+
 
     # Main area
     st.logo("static/agentcore-service-icon.png", size="large")
